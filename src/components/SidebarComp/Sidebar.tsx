@@ -10,7 +10,7 @@ interface SidebarProps {
 const items = [
   {
     id: 1,
-    link: "/userdetail/1",
+    link: "/userdetail",
     name: "User",
     img: "/users 1.png",
     available: true,
