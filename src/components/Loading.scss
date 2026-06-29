@@ -1,0 +1,18 @@
+@use "../partials/" as *;
+
+.please-wait {
+  @include flex(center);
+  gap: 8px;
+}
+
+.loader-icon {
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

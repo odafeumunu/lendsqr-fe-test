@@ -1,0 +1,76 @@
+@use "../../partials/" as *;
+
+.action-menu {
+  position: relative;
+  display: inline-block;
+
+  &__trigger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    color: $grey;
+
+    &:hover {
+      color: $blue-color;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $grey;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+
+    &:hover {
+      background-color: $inactiveGradient;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: $white;
+    box-shadow: $box-shadow;
+    border: 1px solid $light-blue;
+    border-radius: 5px;
+    width: 180px;
+    padding: 10px 0;
+    z-index: 99;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $grey;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+
+    img {
+      margin-right: 8px;
+    }
+
+    &:hover {
+      background-color: $inactiveGradient;
+    }
+  }
+}

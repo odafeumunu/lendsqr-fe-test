@@ -1,0 +1,23 @@
+@use "../../partials/" as *;
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+.table-skeleton {
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+
+  &__cell {
+    height: 14px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+    background-size: 400px 100%;
+    animation: shimmer 1.4s ease infinite;
+  }
+}

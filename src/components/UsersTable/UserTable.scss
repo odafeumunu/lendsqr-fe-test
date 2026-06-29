@@ -1,0 +1,97 @@
+@use "../../partials/" as *;
+
+.users-table {
+  position: relative;
+  background-color: $white;
+  padding: 20px;
+  box-shadow: $box-shadow;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  border-radius: 4px;
+
+  .users-table__filter-trigger {
+    @include input-style;
+    @include flex(flex-start);
+    gap: 10px;
+    width: fit-content;
+    max-width: fit-content;
+    background-color: $deepskyblue-color;
+    color: $white;
+    margin-bottom: 15px;
+    margin-top: 0px;
+    @include border-radius(10px);
+    cursor: pointer;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.6fr 1fr 1.2fr 0.9fr 0.5fr;
+    gap: 10px;
+    align-items: center;
+    min-width: 900px; // forces horizontal scroll below this width instead of squashing
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $light-blue;
+
+    &:last-of-type {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+
+  &__head-cell {
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $grey;
+    cursor: pointer;
+    padding: 0;
+    white-space: nowrap;
+
+    &:disabled {
+      cursor: default;
+    }
+  }
+
+  &__cell {
+    font-size: 13px;
+    color: $grey;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:last-child {
+      overflow: visible;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__count {
+    font-size: 14px;
+    color: $grey;
+    display: flex;
+    align-items: center;
+  }
+
+  &__count-badge {
+    padding: 7px;
+    border-radius: 4px;
+    background-color: #213f7d1a;
+    margin: 0 6px;
+  }
+}

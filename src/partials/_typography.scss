@@ -1,0 +1,21 @@
+@use "variables" as *;
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: $font-weight-bold;
+  line-height: 1.5;
+}
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: $black;
+}
+li {
+  list-style: none;
+}
+p,
+a {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-family: $primary-font;
+}

@@ -1,0 +1,66 @@
+@use 'variables' as *;
+
+@mixin flex($justify) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+}
+
+@mixin grid($column) {
+  display: grid;
+  align-items: center;
+  grid-template-columns: $column;
+}
+@mixin input-style {
+  width: 100%!important;
+  padding: 12px 15px;
+  outline: none;
+  border: none;
+  background: transparent;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: inherit;
+
+}
+
+@mixin prefixes($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  -ms-#{$property}: $value;
+  -o-#{$property}: $value;
+  #{$property}: $value;
+}
+
+@mixin border-radius($radius) {
+  @include prefixes("border-radius", $radius);
+}
+
+@mixin transform($rotate) {
+  @include prefixes("transform", rotate($rotate));
+}
+
+@mixin transition($transition: 0.3s ease-in-out) {
+  @include prefixes("transition", $transition);
+}
+
+// Media Mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "extra-small" {
+    @media only screen and (max-width: 578px) {
+      @content;
+    }
+  } @else if $breakpoint == "small" {
+    @media only screen and (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == "medium" {
+    @media only screen and (max-width: 992px) {
+      @content;
+    }
+  } @else if $breakpoint == "large" {
+    @media only screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+}

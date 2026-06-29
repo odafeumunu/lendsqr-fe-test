@@ -1,0 +1,37 @@
+@use "../../partials/" as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  button {
+    outline: none;
+    border: none;
+    background: none;
+    border-radius: 4px;
+    padding: 7px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  }
+
+  &__page {
+    font-weight: 500;
+    color: $grey;
+
+    &--active {
+      font-weight: 700;
+      color: $deepskyblue-color;
+    }
+  }
+
+  &__ellipsis {
+    margin: 0 5px;
+    color: $grey;
+  }
+}

@@ -1,0 +1,36 @@
+@use "../../partials/" as *;
+
+.table-error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $blacklist;
+    margin-bottom: 6px;
+  }
+
+  &__message {
+    font-size: 14px;
+    color: $grey;
+    margin-bottom: 16px;
+  }
+
+  &__retry {
+    background-color: $deepskyblue-color;
+    color: $white;
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}

@@ -1,16 +1,17 @@
-// App.tsx
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./components/ContextFolder/AuthContext"; 
-import Login from "./components/LoginPage/Login";
-import Dashboard from "./components/DashboardComp/Dashboard";
-import UserDetail from "./components/UserDetail/UserDetail";
-import UserFilter from "./components/UserFilter/UserFilter";
-import ProtectedRoute from "./components/ContextFolder/ProtectedRoute"; 
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Login from "./pages/LoginPage/Login";
+import Dashboard from "./pages/dashboard/Dashboard";
+import UserDetail from "./pages/UserDetail/UserDetail";
+import NotFound from "./pages/NotFound/NotFound";
+import ProtectedRoute from "./components/ContextFolder/ProtectedRoute";
 import "./App.scss";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <AuthProvider>
+    <QueryClientProvider client={queryClient}>
       <Router>
         <Routes>
           <Route path="/" element={<Login />} />
@@ -23,14 +24,6 @@ function App() {
             }
           />
           <Route
-            path="/userfilter"
-            element={
-              <ProtectedRoute>
-                <UserFilter />
-              </ProtectedRoute>
-            }
-          />
-          <Route
             path="/userdetail/:id"
             element={
               <ProtectedRoute>
@@ -38,9 +31,11 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
-    </AuthProvider>
+    </QueryClientProvider>
   );
 }
 

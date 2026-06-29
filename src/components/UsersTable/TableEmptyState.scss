@@ -1,0 +1,36 @@
+@use "../../partials/" as *;
+
+.table-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    color: $blue-color;
+    margin-bottom: 6px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    color: $grey;
+    margin-bottom: 16px;
+  }
+
+  &__clear {
+    background: none;
+    border: 1px solid $deepskyblue-color;
+    color: $deepskyblue-color;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      background-color: rgba(57, 205, 204, 0.06);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@use "../../partials/" as *;
+
+.status-badge {
+  font-size: 12px;
+  padding: 5px 12px;
+  font-weight: 500;
+  border-radius: 100px;
+  white-space: nowrap;
+
+  &--inactive {
+    background-color: $inactiveGradient;
+    color: $inactive;
+  }
+  &--active {
+    background-color: $activeGradient;
+    color: $active;
+  }
+  &--pending {
+    background-color: $pendingGradient;
+    color: $pending;
+  }
+  &--blacklisted {
+    background-color: $blacklistGradient;
+    color: $blacklist;
+  }
+}

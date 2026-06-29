@@ -1,0 +1,47 @@
+@use "../../partials/" as *;
+
+.stat-cards {
+  margin: 15px 0;
+  @include grid(repeat(4, 1fr));
+  gap: 20px;
+
+  @include respond-to(small) {
+    @include grid(repeat(2, 1fr));
+  }
+
+  &__card {
+    background-color: $white;
+    padding: 20px;
+    box-shadow: $box-shadow;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    border-radius: 4px;
+  }
+
+  &__label {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $grey;
+    margin: 10px 0;
+  }
+
+  &__value {
+    font-size: 24px;
+    color: $blue-color;
+    font-weight: 600;
+  }
+
+  &__skeleton {
+    display: inline-block;
+    width: 60px;
+    height: 24px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+    background-size: 400px 100%;
+    animation: shimmer 1.4s ease infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
